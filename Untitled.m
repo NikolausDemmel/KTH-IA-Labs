@@ -1,0 +1,16 @@
+image = double(imread('rubiks-cube2.jpg'))/255;
+
+blurkernel = ...
+    [ 0 1 2 4 2 1 0; ...
+      1 2 4 6 4 2 0; ...
+      2 4 6 24 6 4 2; ...
+      1 2 4 6 4 2 0; ...
+      0 1 2 4 2 1 0 ];
+blurkernel = blurkernel/(sum(blurkernel(:)));
+
+%for i=1:3
+%    %image(:,:,i) = conv2(double(image(:,:,i)), blurkernel, 'same');
+%    image(:,:,i) = gaussffta(image(:,:,i), 5);
+%end
+
+showedgedetect(image);
